@@ -1,0 +1,20 @@
+---
+title: "Sampling"
+author: "Dominic Skinnion"
+date: "10/1/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+x %>%
+  na.omit() %>%
+  select(red) %>%
+  mutate(prop = red/25) %>%
+  ggplot() +
+    geom_bar(aes(x = prop))
+```
+
